@@ -1,0 +1,46 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Indian Flag Colors Background Circle -->
+  <circle cx="100" cy="100" r="95" fill="#FF9933" opacity="0.1"/>
+  
+  <!-- Main Shield -->
+  <path d="M100 20 L160 50 L160 120 Q160 150 100 180 Q40 150 40 120 L40 50 Z" fill="url(#gradient1)" stroke="#138808" stroke-width="3"/>
+  
+  <!-- Inner Shield -->
+  <path d="M100 35 L150 60 L150 115 Q150 140 100 165 Q50 140 50 115 L50 60 Z" fill="white" opacity="0.9"/>
+  
+  <!-- AI Circuit Pattern -->
+  <circle cx="100" cy="90" r="25" fill="none" stroke="#000080" stroke-width="2"/>
+  <circle cx="100" cy="90" r="20" fill="none" stroke="#FF9933" stroke-width="1.5"/>
+  <circle cx="100" cy="90" r="15" fill="none" stroke="#138808" stroke-width="1.5"/>
+  
+  <!-- AI Nodes -->
+  <circle cx="100" cy="90" r="5" fill="#000080"/>
+  <circle cx="85" cy="75" r="3" fill="#FF9933"/>
+  <circle cx="115" cy="75" r="3" fill="#FF9933"/>
+  <circle cx="85" cy="105" r="3" fill="#138808"/>
+  <circle cx="115" cy="105" r="3" fill="#138808"/>
+  
+  <!-- Connection Lines -->
+  <line x1="100" y1="90" x2="85" y2="75" stroke="#000080" stroke-width="1.5"/>
+  <line x1="100" y1="90" x2="115" y2="75" stroke="#000080" stroke-width="1.5"/>
+  <line x1="100" y1="90" x2="85" y2="105" stroke="#000080" stroke-width="1.5"/>
+  <line x1="100" y1="90" x2="115" y2="105" stroke="#000080" stroke-width="1.5"/>
+  
+  <!-- City Skyline -->
+  <rect x="70" y="130" width="10" height="20" fill="#000080" opacity="0.7"/>
+  <rect x="85" y="125" width="10" height="25" fill="#000080" opacity="0.7"/>
+  <rect x="100" y="120" width="10" height="30" fill="#000080" opacity="0.7"/>
+  <rect x="115" y="125" width="10" height="25" fill="#000080" opacity="0.7"/>
+  
+  <!-- Ashoka Chakra Inspired Element -->
+  <circle cx="100" cy="90" r="8" fill="none" stroke="#000080" stroke-width="1"/>
+  
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="gradient1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF9933;stop-opacity:0.3" />
+      <stop offset="50%" style="stop-color:#FFFFFF;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#138808;stop-opacity:0.3" />
+    </linearGradient>
+  </defs>
+</svg>
