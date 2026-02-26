@@ -234,11 +234,12 @@ curl http://localhost:8000/health
 
 ## 📚 Documentation
 
-- [Architecture Overview](docs/ARCHITECTURE.md)
-- [ML/DL Integration](docs/ML_DL_INTEGRATION.md)
-- [Agentic AI System](docs/AGENTIC_AI_ARCHITECTURE.md)
-- [Deployment Guide](docs/DEPLOYMENT_GUIDE.md)
-- [Contributing](CONTRIBUTING.md)
+- [Architecture Overview](ARCHITECTURE.md)
+- [ML/DL Integration](ML_DL_INTEGRATION.md)
+- [Agentic AI System](AGENTIC_AI_ARCHITECTURE.md)
+- [Deployment Guide](DEPLOYMENT_GUIDE.md)
+- [Test Report](FINAL_TEST_REPORT.md)
+- [Production Status](FINAL_PRODUCTION_STATUS.md)
 
 ---
 
