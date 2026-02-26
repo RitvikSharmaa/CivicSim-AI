@@ -7,7 +7,15 @@
 
 > **Multi-Agent AI system for policy simulation across all 36 Indian states & Union Territories using 100% FREE data sources**
 
-![CivicSim AI Banner](https://via.placeholder.com/1200x400/1e3a8a/ffffff?text=CivicSim+AI+-+India+Policy+Simulation)
+## 🚀 Quick Deploy (FREE)
+
+Deploy your own instance in minutes:
+
+[![Deploy Frontend to Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/RitvikSharmaa/CivicSim-AI&project-name=civicsim-ai&repository-name=civicsim-ai&root-directory=frontend&env=NEXT_PUBLIC_API_URL)
+
+[![Deploy Backend to Railway](https://railway.app/button.svg)](https://railway.app/template/civicsim-ai?referralCode=YOUR_CODE)
+
+**See [DEPLOYMENT_ONLINE.md](DEPLOYMENT_ONLINE.md) for detailed deployment instructions**
 
 ---
 
