@@ -20,6 +20,7 @@ class SimulationState(TypedDict):
     explanation: Dict
     enable_optimization: bool
     region: Dict
+    token_usage: Dict
 
 class SimulationEngine:
     """LangGraph-based orchestration of all agents"""

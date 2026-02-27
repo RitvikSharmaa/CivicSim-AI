@@ -7,15 +7,61 @@
 
 > **Multi-Agent AI system for policy simulation across all 36 Indian states & Union Territories using 100% FREE data sources**
 
-## 🚀 Quick Deploy (FREE)
+## 🌐 Live Demo
 
-Deploy your own instance in minutes:
+> **Status**: Ready to Deploy ✅
 
-[![Deploy Frontend to Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/RitvikSharmaa/CivicSim-AI&project-name=civicsim-ai&repository-name=civicsim-ai&root-directory=frontend&env=NEXT_PUBLIC_API_URL)
+**Live URLs** (after deployment):
+- 🌐 **Frontend**: `https://civicsim-ai.vercel.app` (your URL here)
+- 🔧 **Backend API**: `https://civicsim-ai.up.railway.app` (your URL here)
+- 📚 **API Docs**: `https://civicsim-ai.up.railway.app/api/docs`
 
-[![Deploy Backend to Railway](https://railway.app/button.svg)](https://railway.app/template/civicsim-ai?referralCode=YOUR_CODE)
+---
 
-**See [DEPLOYMENT_ONLINE.md](DEPLOYMENT_ONLINE.md) for detailed deployment instructions**
+## 🚀 Quick Deploy (100% FREE)
+
+Deploy your own instance in less than 10 minutes:
+
+### Option 1: One-Click Deploy (Easiest)
+
+**Frontend (Vercel)**
+1. Click: https://vercel.com/new
+2. Import: `RitvikSharmaa/CivicSim-AI`
+3. Set root directory: `frontend`
+4. Add env: `NEXT_PUBLIC_API_URL=<your-railway-url>`
+5. Deploy! ✅
+
+**Backend (Railway)**
+1. Click: https://railway.app/new
+2. Deploy from GitHub: `RitvikSharmaa/CivicSim-AI`
+3. Add environment variables (see below)
+4. Deploy! ✅
+
+### Option 2: Deploy Buttons
+
+[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/RitvikSharmaa/CivicSim-AI&root-directory=frontend)
+
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https://github.com/RitvikSharmaa/CivicSim-AI)
+
+### 📋 Required Environment Variables
+
+**Backend (Railway)**
+```env
+MONGODB_URI=your_mongodb_atlas_uri
+MONGODB_DB_NAME=civicsim_ai
+DEMO_MODE=true
+OPENROUTER_API_KEY=your_openrouter_key
+OPENROUTER_MODEL=arcee-ai/trinity-large-preview:free
+SECRET_KEY=your_secret_key
+ALLOWED_ORIGINS=https://your-vercel-url.vercel.app
+```
+
+**Frontend (Vercel)**
+```env
+NEXT_PUBLIC_API_URL=https://your-railway-url.railway.app
+```
+
+**📖 Detailed Guide**: [DEPLOYMENT_ONLINE.md](DEPLOYMENT_ONLINE.md) | [Quick Start](DEPLOY_NOW.md)
 
 ---
 

@@ -25,14 +25,18 @@ class PolicyAgent:
         else:
             region = IndianRegion(state="Maharashtra")
         
+        # Initialize token tracking
+        token_usage = {"input_tokens": 0, "output_tokens": 0, "total_tokens": 0}
+        
         if settings.demo_mode:
             # Demo mode: deterministic extraction with Indian context
             structured = self._demo_extraction_india(raw_text, region)
         else:
             # Production: use OpenRouter LLM
-            structured = await self._llm_extraction(raw_text, region)
+            structured, token_usage = await self._llm_extraction(raw_text, region)
         
         state["structured_policy"] = structured
+        state["token_usage"] = token_usage
         
         # Get related policies from knowledge base
         related_policies = self._get_related_policies(structured.policy_type, region.state)
@@ -152,8 +156,8 @@ class PolicyAgent:
         else:
             return "economic"
     
-    async def _llm_extraction(self, text: str, region: IndianRegion) -> IndianStructuredPolicy:
-        """Use OpenRouter LLM for extraction"""
+    async def _llm_extraction(self, text: str, region: IndianRegion) -> tuple[IndianStructuredPolicy, Dict[str, int]]:
+        """Use OpenRouter LLM for extraction - returns (policy, token_usage)"""
         try:
             async with httpx.AsyncClient() as client:
                 response = await client.post(
@@ -183,13 +187,22 @@ class PolicyAgent:
                     content = result["choices"][0]["message"]["content"]
                     policy_data = json.loads(content)
                     policy_data["region"] = region
-                    return IndianStructuredPolicy.from_inr(**policy_data)
+                    
+                    # Extract token usage from response
+                    usage = result.get("usage", {})
+                    token_usage = {
+                        "input_tokens": usage.get("prompt_tokens", 0),
+                        "output_tokens": usage.get("completion_tokens", 0),
+                        "total_tokens": usage.get("total_tokens", 0)
+                    }
+                    
+                    return IndianStructuredPolicy.from_inr(**policy_data), token_usage
                 else:
                     logger.warning(f"LLM API failed, falling back to demo mode")
-                    return self._demo_extraction_india(text, region)
+                    return self._demo_extraction_india(text, region), {"input_tokens": 0, "output_tokens": 0, "total_tokens": 0}
         except Exception as e:
             logger.error(f"LLM extraction error: {e}, falling back to demo mode")
-            return self._demo_extraction_india(text, region)
+            return self._demo_extraction_india(text, region), {"input_tokens": 0, "output_tokens": 0, "total_tokens": 0}
     
     async def _log_activity(self, input_data: str, output_data: IndianStructuredPolicy):
         """Log agent activity to MongoDB"""

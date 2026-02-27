@@ -52,6 +52,7 @@ async def run_simulation(
             "impact_predictions": result.get("impact_predictions"),
             "optimization_result": result.get("optimization_result"),
             "explanation": result.get("explanation"),
+            "token_usage": result.get("token_usage"),
             "timestamp": datetime.utcnow()
         }
         
@@ -67,7 +68,12 @@ async def run_simulation(
                 "impact_predictions": result.get("impact_predictions"),
                 "optimization": result.get("optimization_result"),
                 "explanation": result.get("explanation")
-            }
+            },
+            "token_usage": result.get("token_usage", {
+                "input_tokens": 0,
+                "output_tokens": 0,
+                "total_tokens": 0
+            })
         }
     
     except Exception as e:
